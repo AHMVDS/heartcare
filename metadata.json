@@ -1,0 +1,13 @@
+{
+  "mode": "synthetic_demo",
+  "seed": 42,
+  "rows": 4000,
+  "clinical_validation": false,
+  "target": "Arbitrary synthetic binary label; no disease endpoint or time horizon",
+  "bands": "Low <30%, Medium 30\u2013<60%, High >=60%; arbitrary UI demonstration thresholds",
+  "units_assumed": {
+    "blood_pressure": "systolic mmHg",
+    "cholesterol": "total mg/dL",
+    "bmi": "kg/m\u00b2"
+  }
+}
