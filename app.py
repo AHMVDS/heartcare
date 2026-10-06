@@ -103,7 +103,7 @@ translations = {
         "contain a patient-history database.",
     },
     "العربية": {
-        "title": "HeartCare AI",
+        "title": "Heart Care",
         "subtitle": "نظرة عامة على المريض / التحليل الفردي والجماعي",
         "warning": "لأغراض العرض فقط • يستخدم كلا النموذجين بيانات صناعية "
         "تجريبية. نسب ومستويات الخطر لا تمثل تقديرًا طبيًا حقيقيًا "
