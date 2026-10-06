@@ -475,6 +475,123 @@ hr {
     [data-testid="stMetric"] { padding: 10px !important; }
     div[data-testid="stButton"] > button { font-size: .88rem !important; padding: .35rem .7rem !important; }
 }
+
+/* ---------- HeartCare share-preview hero ---------- */
+.hc-preview-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 42px 46px;
+    margin: 0.4rem 0 1.4rem;
+    border-radius: 30px;
+    color: #fff;
+    background:
+        radial-gradient(520px 300px at 88% 12%, rgba(217,58,65,.34), transparent 62%),
+        radial-gradient(420px 260px at 5% 105%, rgba(192,38,45,.22), transparent 68%),
+        linear-gradient(135deg, #0B1424 0%, #14213A 50%, #5B0F1E 100%);
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: 0 28px 70px -28px rgba(11,20,36,.72);
+}
+.hc-preview-card::after {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    right: -100px;
+    top: -120px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.10);
+    box-shadow: 0 0 0 42px rgba(255,255,255,.025), 0 0 0 86px rgba(255,255,255,.018);
+}
+.hc-preview-copy { position: relative; z-index: 2; max-width: 680px; }
+.hc-preview-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    margin-bottom: 18px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.12);
+    color: #F8D7DA;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .13em;
+}
+.hc-preview-title {
+    margin: 0 !important;
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+    background: none !important;
+    font-family: 'Fraunces', 'Cairo', Georgia, serif !important;
+    font-size: clamp(3.1rem, 7vw, 5.7rem) !important;
+    line-height: .96 !important;
+    letter-spacing: -3px !important;
+    text-align: left !important;
+}
+.hc-preview-title span { color: #F15B61; }
+.hc-preview-sub {
+    margin: 18px 0 0 !important;
+    color: #D7DFEA !important;
+    font-size: 1.03rem;
+    line-height: 1.7;
+    max-width: 590px;
+    text-align: left !important;
+}
+.hc-preview-visual {
+    position: relative;
+    z-index: 2;
+    width: 260px;
+    min-width: 260px;
+    height: 230px;
+    display: grid;
+    place-items: center;
+}
+.hc-preview-orbit {
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 50%;
+    animation: breathe 4.8s ease-in-out infinite;
+}
+.hc-preview-heart {
+    width: 132px;
+    filter: drop-shadow(0 18px 30px rgba(192,38,45,.45));
+    animation: heartbeat 1.7s ease-in-out infinite;
+}
+.hc-preview-ecg {
+    position: absolute;
+    left: -34px;
+    right: -34px;
+    bottom: 28px;
+    height: 56px;
+}
+.hc-preview-ecg path {
+    fill: none;
+    stroke: #F15B61;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 700;
+    animation: trace 3.4s var(--ease) infinite;
+}
+@media (max-width: 768px) {
+    .hc-preview-card { min-height: 285px; padding: 30px 26px; border-radius: 24px; }
+    .hc-preview-visual { width: 150px; min-width: 150px; height: 180px; }
+    .hc-preview-heart { width: 92px; }
+    .hc-preview-title { font-size: 3.25rem !important; letter-spacing: -2px !important; }
+}
+@media (max-width: 560px) {
+    .hc-preview-card { min-height: 300px; padding: 28px 22px; }
+    .hc-preview-visual { display: none; }
+    .hc-preview-title { font-size: 3rem !important; }
+    .hc-preview-sub { font-size: .92rem; }
+}
+
 </style>
 """
  
@@ -501,33 +618,50 @@ with language_column:
  
  
 # =========================================================
-# HEADER (decorative heartbeat + original text)
+# HEADER / SHARE-PREVIEW HERO
 # =========================================================
- 
+
+hero_subtitle = (
+    "تحليل مبسط وواضح لبيانات القلب — تجربة حديثة لعرض المخاطر ومراجعة بيانات المرضى."
+    if AR
+    else
+    "A modern patient risk dashboard for clear, fast and intuitive heart-health analysis."
+)
+
 st.markdown(
-    """
-<div class="hc-hero" aria-hidden="true">
-  <svg class="hc-heart" viewBox="0 0 32 32">
-    <defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#D93A41"/><stop offset="1" stop-color="#5B0F1E"/></linearGradient></defs>
-    <path fill="url(#hg)" d="M16 28.5C5 20.6 2.5 14.4 2.5 10.2 2.5 6.2 5.6 3.5 9.2 3.5c2.7 0 5 1.5 6.8 4.1 1.8-2.6 4.1-4.1 6.8-4.1 3.6 0 6.7 2.7 6.7 6.7 0 4.2-2.5 10.4-13.5 18.3z"/>
-  </svg>
-  <svg class="hc-ecg" viewBox="0 0 600 46" preserveAspectRatio="none">
-    <path class="ghost" d="M0 23H150l12-4 10 4h40l10-20 14 40 12-20h30l14-6 14 6h340"/>
-    <path d="M0 23H150l12-4 10 4h40l10-20 14 40 12-20h30l14-6 14 6h340"/>
-  </svg>
+    f"""
+<div class="hc-preview-card" aria-label="HeartCare">
+  <div class="hc-preview-copy">
+    <div class="hc-preview-kicker">HEART HEALTH • PATIENT INSIGHTS</div>
+    <h1 class="hc-preview-title">Heart<span>Care</span></h1>
+    <p class="hc-preview-sub">{hero_subtitle}</p>
+  </div>
+
+  <div class="hc-preview-visual" aria-hidden="true">
+    <div class="hc-preview-orbit"></div>
+    <svg class="hc-preview-heart" viewBox="0 0 32 32">
+      <defs>
+        <linearGradient id="previewHeartGradient" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#F15B61"/>
+          <stop offset="1" stop-color="#991B1B"/>
+        </linearGradient>
+      </defs>
+      <path fill="url(#previewHeartGradient)"
+        d="M16 28.5C5 20.6 2.5 14.4 2.5 10.2 2.5 6.2 5.6 3.5 9.2 3.5c2.7 0 5 1.5 6.8 4.1 1.8-2.6 4.1-4.1 6.8-4.1 3.6 0 6.7 2.7 6.7 6.7 0 4.2-2.5 10.4-13.5 18.3z"/>
+    </svg>
+    <svg class="hc-preview-ecg" viewBox="0 0 600 56" preserveAspectRatio="none">
+      <path d="M0 28H155l16-5 12 5h38l12-25 16 50 14-25h34l15-7 15 7h273"/>
+    </svg>
+  </div>
 </div>
 """,
     unsafe_allow_html=True,
 )
- 
-st.title(t["title"])
- 
+
 st.caption(t["subtitle"])
- 
 st.warning(t["warning"])
- 
- 
+
+
 # =========================================================
 # SIDEBAR — SINGLE PATIENT
 # =========================================================
@@ -1149,6 +1283,10 @@ st.caption(
 )
  
 st.divider()
+ 
+st.caption(
+    t["footer"]
+)
  
 st.caption(
     t["footer"]
