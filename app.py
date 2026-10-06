@@ -10,7 +10,7 @@ from core import ROOT, predict
 # =========================================================
 
 st.set_page_config(
-    page_title="HeartCare AI",
+    page_title="HeartCare",
     layout="wide",
     initial_sidebar_state="auto",
 )
