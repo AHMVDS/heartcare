@@ -39,7 +39,7 @@ def validate(frame):
 
 def predict(frame, model_name):
     clean = validate(frame)
-    bundle = joblib.load(ROOT / 'models' / f'{model_name}.joblib')
+    bundle = joblib.load(ROOT / f'{model_name}.joblib')
     if bundle['features'] != FEATURES or bundle['mode'] != 'synthetic_demo':
         raise ValueError('Unexpected model metadata. Review the model integration first.')
     result = clean.copy()
