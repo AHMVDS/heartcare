@@ -5,7 +5,7 @@ import streamlit as st
 from core import ROOT, predict, validate
 
 st.set_page_config(page_title='HeartCare AI', page_icon='♥', layout='wide')
-st.markdown('''<style>h1,h2,h3{color:#D00000 !important;} .block-container{padding-top:2rem} [data-testid="stMetric"]{background:#F8F1F2;padding:18px;border-radius:12px;border:1px solid #F0DDDF}</style>''', unsafe_allow_html=True)
+st.markdown('''<style>h1,h2,h3{color:#8B0000 !important;} .block-container{padding-top:2rem} [data-testid="stMetric"]{background:#F8F1F2;padding:18px;border-radius:12px;border:1px solid #F0DDDF}</style>''', unsafe_allow_html=True)
 st.title('♥ HeartCare AI')
 st.caption('PATIENT OVERVIEW  /  SINGLE & BULK ANALYSIS')
 st.warning('DEMONSTRATION ONLY • Both models use synthetic data. Scores and bands are not medical risk estimates and must not guide patient care.')
