@@ -11,7 +11,6 @@ from core import ROOT, predict
 
 st.set_page_config(
     page_title="HeartCare AI",
-    page_icon="♥",
     layout="wide",
     initial_sidebar_state="auto",
 )
@@ -48,8 +47,7 @@ translations = {
 
     "English": {
 
-        "title":
-            "♥ HeartCare AI",
+        "title": "HeartCare AI",
 
         "subtitle":
             "PATIENT OVERVIEW / SINGLE & BULK ANALYSIS",
@@ -118,9 +116,8 @@ translations = {
             "Patient Details",
 
         "bands":
-            "Risk levels: Low <30%, Medium 30–<60%, "
-            "High ≥60%. These thresholds are for "
-            "demonstration purposes only.",
+            "Risk levels: Low <30%, Medium 30–<60%, High ≥60%. "
+            "These thresholds are for demonstration purposes only.",
 
         "enter_patient":
             "Enter the patient information in the sidebar "
@@ -130,8 +127,8 @@ translations = {
             "Bulk Patient Analysis",
 
         "bulk_description":
-            "Upload a CSV file to calculate a risk score "
-            "for every patient using the selected model.",
+            "Upload a CSV file to calculate a risk score for every "
+            "patient using the selected model.",
 
         "upload":
             "Patient CSV · up to 5 MB / 10,000 rows",
@@ -199,9 +196,9 @@ translations = {
             "Unable to process this batch",
 
         "footer":
-            "HeartCare AI · Uploaded records are processed "
-            "during the current session only. This application "
-            "does not contain a patient-history database.",
+            "HeartCare AI · Uploaded records are processed during "
+            "the current session only. This application does not "
+            "contain a patient-history database.",
     },
 
 
@@ -212,15 +209,15 @@ translations = {
     "العربية": {
 
         "title":
-            "♥ HeartCare AI",
+            "HeartCare AI",
 
         "subtitle":
             "نظرة عامة على المريض / التحليل الفردي والجماعي",
 
         "warning":
-            "لأغراض العرض فقط • يستخدم كلا النموذجين بيانات "
-            "صناعية تجريبية. نسب ومستويات الخطر لا تمثل تقديرًا "
-            "طبيًا حقيقيًا ولا يجب استخدامها لاتخاذ قرارات علاجية.",
+            "لأغراض العرض فقط • يستخدم كلا النموذجين بيانات صناعية "
+            "تجريبية. نسب ومستويات الخطر لا تمثل تقديرًا طبيًا حقيقيًا "
+            "ولا يجب استخدامها لاتخاذ قرارات علاجية.",
 
         "single_patient":
             "إدخال مريض واحد",
@@ -381,7 +378,7 @@ text_align = "right" if AR else "left"
 
 
 # =========================================================
-# CSS — DESKTOP + MOBILE
+# CSS — PREMIUM + MOBILE RESPONSIVE
 # =========================================================
 
 st.markdown(
@@ -389,7 +386,7 @@ st.markdown(
 <style>
 
 /* ==========================================
-   GENERAL PAGE
+   GENERAL
    ========================================== */
 
 .block-container {{
@@ -426,6 +423,7 @@ h3 {{
 
 h1 {{
     margin-bottom: 0.2rem !important;
+    letter-spacing: -0.5px;
 }}
 
 
@@ -460,15 +458,40 @@ h1 {{
 
 
 /* ==========================================
-   BUTTONS
+   NORMAL BUTTONS
    ========================================== */
 
-.stButton button,
 .stDownloadButton button,
 [data-testid="stFormSubmitButton"] button {{
     border-radius: 10px !important;
     font-weight: 600 !important;
     min-height: 44px;
+}}
+
+
+/* ==========================================
+   PREMIUM LANGUAGE BUTTON
+   ========================================== */
+
+div[data-testid="stButton"] > button {{
+    background: #FFFFFF !important;
+    color: #991B1B !important;
+    border: 1px solid #991B1B !important;
+    border-radius: 22px !important;
+    font-weight: 650 !important;
+    min-height: 42px !important;
+    padding: 0.45rem 1rem !important;
+    transition: all 0.2s ease;
+}}
+
+div[data-testid="stButton"] > button:hover {{
+    background: #991B1B !important;
+    color: #FFFFFF !important;
+    border-color: #991B1B !important;
+}}
+
+div[data-testid="stButton"] > button:active {{
+    transform: scale(0.98);
 }}
 
 
@@ -535,7 +558,6 @@ hr {{
     .stButton button,
     .stDownloadButton button,
     [data-testid="stFormSubmitButton"] button {{
-        width: 100% !important;
         min-height: 46px !important;
         font-size: 0.95rem !important;
     }}
@@ -603,6 +625,11 @@ hr {{
     [data-testid="stMetric"] {{
         padding: 10px !important;
     }}
+
+    div[data-testid="stButton"] > button {{
+        font-size: 0.88rem !important;
+        padding: 0.35rem 0.7rem !important;
+    }}
 }}
 
 </style>
@@ -612,16 +639,15 @@ hr {{
 
 
 # =========================================================
-# TOP LANGUAGE BUTTON
-# One tap = instant language change
+# PREMIUM LANGUAGE SWITCH
 # =========================================================
 
-top_space, language_column = st.columns([8, 2])
+top_space, language_column = st.columns([7.5, 2.5])
 
 with language_column:
 
     st.button(
-        "🌐 English" if AR else "🌐 عربي",
+        "اللغة: English" if AR else "Language: العربية",
         key="language_switch",
         on_click=switch_language,
         width="stretch",
@@ -648,10 +674,6 @@ with st.sidebar:
     st.header(t["single_patient"])
 
 
-    # -----------------------------------------------------
-    # MODEL
-    # -----------------------------------------------------
-
     model_label = st.selectbox(
         t["prediction_model"],
         [
@@ -667,9 +689,9 @@ with st.sidebar:
         model = "lr"
 
 
-    # -----------------------------------------------------
+    # =====================================================
     # PATIENT FORM
-    # -----------------------------------------------------
+    # =====================================================
 
     with st.form("single_patient"):
 
@@ -690,7 +712,6 @@ with st.sidebar:
         )
 
 
-        # Convert translated display back to model value
         if sex_display == t["male"]:
             sex = "M"
         else:
@@ -731,7 +752,6 @@ with st.sidebar:
         )
 
 
-        # Convert translated display back to model value
         if smoker_display == t["yes"]:
             smoker = "Yes"
         else:
@@ -803,9 +823,9 @@ if "single" in st.session_state:
     row = st.session_state["single"]
 
 
-    # -----------------------------------------------------
-    # GAUGE
-    # -----------------------------------------------------
+    # =====================================================
+    # RISK GAUGE
+    # =====================================================
 
     gauge = go.Figure(
 
@@ -875,9 +895,9 @@ if "single" in st.session_state:
     )
 
 
-    # -----------------------------------------------------
-    # DASHBOARD LAYOUT
-    # -----------------------------------------------------
+    # =====================================================
+    # DASHBOARD COLUMNS
+    # =====================================================
 
     gauge_col, info_col = st.columns(
         [1.5, 1],
@@ -895,20 +915,13 @@ if "single" in st.session_state:
 
     with info_col:
 
-        # -----------------------------------------------
-        # TRANSLATE RISK LEVEL
-        # -----------------------------------------------
-
         risk_translation = {
 
-            "Low":
-                t["low"],
+            "Low": t["low"],
 
-            "Medium":
-                t["medium"],
+            "Medium": t["medium"],
 
-            "High":
-                t["high"],
+            "High": t["high"],
         }
 
 
@@ -930,9 +943,9 @@ if "single" in st.session_state:
         )
 
 
-        # -----------------------------------------------
+        # =================================================
         # PATIENT DETAILS
-        # -----------------------------------------------
+        # =================================================
 
         if AR:
 
@@ -985,7 +998,7 @@ else:
 
 
 # =========================================================
-# BULK ANALYSIS
+# BULK PATIENT ANALYSIS
 # =========================================================
 
 st.divider()
@@ -1036,7 +1049,7 @@ with sample_col:
 
 
 # =========================================================
-# CSV FORMAT HELP
+# CSV FORMAT
 # =========================================================
 
 with st.expander(
@@ -1055,7 +1068,7 @@ with st.expander(
 
 
 # =========================================================
-# SELECT DATA SOURCE
+# SELECT SOURCE
 # =========================================================
 
 if uploaded is not None:
@@ -1080,7 +1093,7 @@ if source is not None:
     try:
 
         # -------------------------------------------------
-        # FILE SIZE VALIDATION
+        # FILE SIZE
         # -------------------------------------------------
 
         if uploaded is not None:
@@ -1109,7 +1122,7 @@ if source is not None:
 
 
         # -------------------------------------------------
-        # RUN MODEL
+        # PREDICTION
         # -------------------------------------------------
 
         result = predict(
@@ -1119,7 +1132,7 @@ if source is not None:
 
 
         # -------------------------------------------------
-        # SUMMARY COUNTS
+        # COUNTS
         # -------------------------------------------------
 
         total_patients = len(result)
@@ -1146,10 +1159,9 @@ if source is not None:
         )
 
 
-        # -------------------------------------------------
-        # METRIC CARDS
-        # 2 x 2 also works well on mobile
-        # -------------------------------------------------
+        # =================================================
+        # METRICS
+        # =================================================
 
         metric1, metric2 = st.columns(2)
 
@@ -1187,9 +1199,9 @@ if source is not None:
         )
 
 
-        # -------------------------------------------------
+        # =================================================
         # RESULTS TABLE
-        # -------------------------------------------------
+        # =================================================
 
         st.dataframe(
 
@@ -1216,9 +1228,9 @@ if source is not None:
         )
 
 
-        # -------------------------------------------------
-        # RISK DISTRIBUTION
-        # -------------------------------------------------
+        # =================================================
+        # RISK DISTRIBUTION CHART
+        # =================================================
 
         counts = (
             result.demo_band
@@ -1292,15 +1304,13 @@ if source is not None:
         )
 
 
-        # -------------------------------------------------
+        # =================================================
         # SAFE CSV EXPORT
-        # -------------------------------------------------
+        # =================================================
 
         exported = result.copy()
 
 
-        # Protect exported spreadsheets from formulas
-        # supplied inside text fields.
         for col in exported.select_dtypes(
             include=[
                 "object",
@@ -1341,9 +1351,9 @@ if source is not None:
         )
 
 
-        # -------------------------------------------------
+        # =================================================
         # DOWNLOAD RESULTS
-        # -------------------------------------------------
+        # =================================================
 
         st.download_button(
 
@@ -1374,6 +1384,12 @@ if source is not None:
 # =========================================================
 # FOOTER
 # =========================================================
+
+st.divider()
+
+st.caption(
+    t["footer"]
+)
 
 st.divider()
 
