@@ -1,4 +1,6 @@
-# HeartCare AI — Streamlit demonstration
+# HeartCare  — # HeartCare
+
+A modern heart health dashboard for patient risk assessment and data analysis.
 
 Implements the supplied PDF: dark red #991B1B and slate #334155, single-patient sidebar, XGBoost/LR selector, gauge, bulk CSV table, distribution chart, downloadable results, and the supplied 10-row sample.
 
