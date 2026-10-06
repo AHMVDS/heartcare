@@ -42,27 +42,28 @@ AR = language == "العربية"
 
 translations = {
 
-    # -----------------------------------------------------
+    # =====================================================
     # ENGLISH
-    # -----------------------------------------------------
+    # =====================================================
 
     "English": {
 
-        "title": "♥ HeartCare AI",
+        "title":
+            "♥ HeartCare AI",
 
         "subtitle":
-            "PATIENT OVERVIEW  /  SINGLE & BULK ANALYSIS",
+            "PATIENT OVERVIEW / SINGLE & BULK ANALYSIS",
 
         "warning":
             "DEMONSTRATION ONLY • Both models use synthetic data. "
-            "Scores and bands are not medical risk estimates and "
-            "must not guide patient care.",
+            "Risk scores and levels are not medical risk estimates "
+            "and must not guide patient care.",
 
         "single_patient":
-            "Single patient",
+            "Single Patient",
 
         "prediction_model":
-            "Prediction model",
+            "Prediction Model",
 
         "age":
             "Age (years)",
@@ -77,10 +78,10 @@ translations = {
             "F",
 
         "bp":
-            "Systolic blood pressure (mmHg)",
+            "Systolic Blood Pressure (mmHg)",
 
         "cholesterol":
-            "Total cholesterol (mg/dL)",
+            "Total Cholesterol (mg/dL)",
 
         "bmi":
             "BMI (kg/m²)",
@@ -95,59 +96,62 @@ translations = {
             "Yes",
 
         "predict":
-            "Predict demo score",
+            "Predict Risk Score",
 
         "units":
             "Units above are assumptions to confirm "
-            "with your final model.",
+            "with the final model.",
 
         "dashboard":
-            "Patient dashboard",
+            "Patient Dashboard",
 
         "score":
-            "Synthetic demo score",
+            "Risk Score",
 
         "band":
-            "Demo band",
+            "Risk Level",
 
         "model_used":
-            "Model used",
+            "Model Used",
 
-        "submitted":
-            "Submitted patient",
+        "patient_details":
+            "Patient Details",
 
         "bands":
-            "Bands: Low <30%, Medium 30–<60%, High ≥60%. "
-            "These are arbitrary demo thresholds.",
+            "Risk levels: Low <30%, Medium 30–<60%, "
+            "High ≥60%. These thresholds are for "
+            "demonstration purposes only.",
 
         "enter_patient":
-            "Enter a patient in the sidebar, then select "
-            "“Predict demo score” to display the gauge.",
+            "Enter the patient information in the sidebar "
+            "and select “Predict Risk Score” to display the result.",
 
         "bulk":
-            "Bulk patient analysis",
+            "Bulk Patient Analysis",
 
         "bulk_description":
-            "Upload a CSV to calculate a demo score for every "
-            "patient with the selected model.",
+            "Upload a CSV file to calculate a risk score "
+            "for every patient using the selected model.",
 
         "upload":
             "Patient CSV · up to 5 MB / 10,000 rows",
 
         "download_sample":
-            "Download sample CSV",
+            "Download Sample CSV",
 
         "use_sample":
-            "Use the 10-patient sample",
+            "Use 10-Patient Sample",
 
         "csv_format":
-            "CSV format & validation",
+            "CSV Format & Validation",
 
         "csv_help":
-            "Sex: M/F. Smoker: Yes/No. Patient IDs are optional; "
-            "if supplied, they must be unique. Incomplete or invalid "
-            "batches are rejected with an error. Extra columns are "
-            "retained but not used by the models.",
+            "Required model fields: age, sex, blood_pressure, "
+            "cholesterol, bmi and smoker. Sex must be M/F and "
+            "Smoker must be Yes/No. patient_id is optional; "
+            "if supplied, IDs must be unique. Invalid or incomplete "
+            "batches are rejected. Extra columns are retained but "
+            "are not used by the models.",
 
         "file_limit":
             "File exceeds the 5 MB limit.",
@@ -164,46 +168,46 @@ translations = {
         "high":
             "High",
 
-        "low_band":
-            "Low demo band",
+        "low_risk":
+            "Low Risk",
 
-        "medium_band":
-            "Medium demo band",
+        "medium_risk":
+            "Medium Risk",
 
-        "high_band":
-            "High demo band",
+        "high_risk":
+            "High Risk",
 
         "bulk_model":
-            "Bulk model",
+            "Bulk Model",
 
         "synthetic_demo":
-            "synthetic demonstration",
+            "Synthetic Demonstration",
 
         "score_column":
-            "Demo score (%)",
+            "Risk Score (%)",
 
         "distribution":
-            "Distribution of demo bands",
+            "Distribution of Risk Levels",
 
         "patients_axis":
             "Patients",
 
         "download_results":
-            "Download demo results",
+            "Download Results",
 
         "error":
             "Unable to process this batch",
 
         "footer":
-            "HeartCare AI · Uploaded records are processed in this "
-            "session; this application has no database or "
-            "patient-history storage.",
+            "HeartCare AI · Uploaded records are processed "
+            "during the current session only. This application "
+            "does not contain a patient-history database.",
     },
 
 
-    # -----------------------------------------------------
+    # =====================================================
     # ARABIC
-    # -----------------------------------------------------
+    # =====================================================
 
     "العربية": {
 
@@ -214,12 +218,12 @@ translations = {
             "نظرة عامة على المريض / التحليل الفردي والجماعي",
 
         "warning":
-            "لأغراض العرض فقط • يستخدم كلا النموذجين بيانات صناعية "
-            "تجريبية. النتائج والتصنيفات لا تمثل تقديرًا طبيًا "
-            "حقيقيًا للمخاطر ولا يجب استخدامها لاتخاذ قرارات علاجية.",
+            "لأغراض العرض فقط • يستخدم كلا النموذجين بيانات "
+            "صناعية تجريبية. نسب ومستويات الخطر لا تمثل تقديرًا "
+            "طبيًا حقيقيًا ولا يجب استخدامها لاتخاذ قرارات علاجية.",
 
         "single_patient":
-            "بيانات المريض",
+            "إدخال مريض واحد",
 
         "prediction_model":
             "نموذج التنبؤ",
@@ -255,7 +259,7 @@ translations = {
             "نعم",
 
         "predict":
-            "احسب النتيجة التجريبية",
+            "توقع نسبة الخطر",
 
         "units":
             "الوحدات المستخدمة افتراضية ويجب تأكيدها "
@@ -265,33 +269,33 @@ translations = {
             "لوحة بيانات المريض",
 
         "score":
-            "النتيجة التجريبية",
+            "نسبة الخطر",
 
         "band":
-            "التصنيف التجريبي",
+            "مستوى الخطر",
 
         "model_used":
             "النموذج المستخدم",
 
-        "submitted":
+        "patient_details":
             "بيانات المريض",
 
         "bands":
-            "التصنيفات: منخفض أقل من 30%، "
+            "مستويات الخطر: منخفض أقل من 30%، "
             "متوسط من 30% إلى أقل من 60%، "
-            "ومرتفع 60% أو أكثر. "
-            "هذه الحدود مخصصة للعرض التجريبي فقط.",
+            "ومرتفع 60% أو أكثر. هذه الحدود مخصصة "
+            "للعرض التجريبي فقط.",
 
         "enter_patient":
             "أدخل بيانات المريض من القائمة الجانبية، "
-            "ثم اضغط «احسب النتيجة التجريبية» لعرض النتيجة.",
+            "ثم اضغط «توقع نسبة الخطر» لعرض النتيجة.",
 
         "bulk":
             "تحليل مجموعة من المرضى",
 
         "bulk_description":
-            "ارفع ملف CSV لحساب نتيجة تجريبية لكل مريض "
-            "باستخدام النموذج المحدد.",
+            "ارفع ملف CSV لحساب نسبة الخطر لكل مريض "
+            "باستخدام نموذج التنبؤ المحدد.",
 
         "upload":
             "ملف CSV للمرضى · بحد أقصى 5 MB / 10,000 صف",
@@ -300,16 +304,17 @@ translations = {
             "تحميل ملف CSV تجريبي",
 
         "use_sample":
-            "استخدام عينة من 10 مرضى",
+            "استخدام عينة 10 مرضى",
 
         "csv_format":
             "تنسيق ملف CSV والتحقق من البيانات",
 
         "csv_help":
-            "في ملف CSV يجب أن تكون قيمة الجنس M أو F، "
-            "وقيمة التدخين Yes أو No. معرف المريض اختياري، "
-            "ولكن إذا تم إدخاله فيجب أن يكون فريدًا. "
-            "سيتم رفض البيانات الناقصة أو غير الصحيحة.",
+            "الحقول المطلوبة للنموذج هي: العمر، الجنس، ضغط الدم، "
+            "الكوليسترول، BMI والتدخين. داخل ملف CSV يجب أن تكون "
+            "قيمة الجنس M أو F، والتدخين Yes أو No. معرف المريض "
+            "patient_id اختياري، وإذا تم إدخاله فيجب أن يكون فريدًا. "
+            "سيتم رفض الملفات التي تحتوي على بيانات ناقصة أو غير صحيحة.",
 
         "file_limit":
             "حجم الملف يتجاوز الحد المسموح وهو 5 MB.",
@@ -326,26 +331,26 @@ translations = {
         "high":
             "مرتفع",
 
-        "low_band":
-            "تصنيف منخفض",
+        "low_risk":
+            "خطر منخفض",
 
-        "medium_band":
-            "تصنيف متوسط",
+        "medium_risk":
+            "خطر متوسط",
 
-        "high_band":
-            "تصنيف مرتفع",
+        "high_risk":
+            "خطر مرتفع",
 
         "bulk_model":
-            "النموذج المستخدم",
+            "نموذج التحليل",
 
         "synthetic_demo":
-            "عرض تجريبي باستخدام بيانات صناعية",
+            "عرض تجريبي ببيانات صناعية",
 
         "score_column":
-            "النتيجة التجريبية (%)",
+            "نسبة الخطر (%)",
 
         "distribution":
-            "توزيع التصنيفات التجريبية",
+            "توزيع مستويات الخطر",
 
         "patients_axis":
             "عدد المرضى",
@@ -358,8 +363,8 @@ translations = {
 
         "footer":
             "HeartCare AI · تتم معالجة البيانات المرفوعة خلال "
-            "الجلسة الحالية فقط، ولا يحتوي التطبيق على قاعدة بيانات "
-            "أو نظام لتخزين تاريخ المرضى.",
+            "الجلسة الحالية فقط، ولا يحتوي التطبيق على قاعدة "
+            "بيانات لتخزين تاريخ المرضى.",
     },
 }
 
@@ -384,11 +389,11 @@ st.markdown(
 <style>
 
 /* ==========================================
-   GENERAL
+   GENERAL PAGE
    ========================================== */
 
 .block-container {{
-    padding-top: 1.2rem;
+    padding-top: 1rem;
     padding-bottom: 3rem;
     max-width: 1250px;
 }}
@@ -415,7 +420,7 @@ st.markdown(
 h1,
 h2,
 h3 {{
-    color: #8B0000 !important;
+    color: #991B1B !important;
     font-weight: 750 !important;
 }}
 
@@ -447,6 +452,10 @@ h1 {{
     border-radius: 14px;
     border: 1px solid #F0DDDF;
     box-shadow: 0 2px 8px rgba(0,0,0,0.025);
+}}
+
+[data-testid="stMetricLabel"] {{
+    font-weight: 600;
 }}
 
 
@@ -483,7 +492,7 @@ h1 {{
 
 
 /* ==========================================
-   DIVIDER
+   DIVIDERS
    ========================================== */
 
 hr {{
@@ -499,7 +508,7 @@ hr {{
 @media (max-width: 768px) {{
 
     .block-container {{
-        padding-top: 0.7rem !important;
+        padding-top: 0.6rem !important;
         padding-left: 1rem !important;
         padding-right: 1rem !important;
         padding-bottom: 2rem !important;
@@ -561,7 +570,6 @@ hr {{
     [data-testid="stAlert"] {{
         font-size: 0.9rem !important;
     }}
-
 }}
 
 
@@ -595,7 +603,6 @@ hr {{
     [data-testid="stMetric"] {{
         padding: 10px !important;
     }}
-
 }}
 
 </style>
@@ -605,10 +612,11 @@ hr {{
 
 
 # =========================================================
-# TOP BAR — ONE TAP LANGUAGE BUTTON
+# TOP LANGUAGE BUTTON
+# One tap = instant language change
 # =========================================================
 
-space, language_column = st.columns([8, 2])
+top_space, language_column = st.columns([8, 2])
 
 with language_column:
 
@@ -632,12 +640,17 @@ st.warning(t["warning"])
 
 
 # =========================================================
-# SIDEBAR
+# SIDEBAR — SINGLE PATIENT
 # =========================================================
 
 with st.sidebar:
 
     st.header(t["single_patient"])
+
+
+    # -----------------------------------------------------
+    # MODEL
+    # -----------------------------------------------------
 
     model_label = st.selectbox(
         t["prediction_model"],
@@ -647,15 +660,16 @@ with st.sidebar:
         ],
     )
 
+
     if model_label == "XGBoost":
         model = "xgboost"
     else:
         model = "lr"
 
 
-    # =====================================================
-    # SINGLE PATIENT FORM
-    # =====================================================
+    # -----------------------------------------------------
+    # PATIENT FORM
+    # -----------------------------------------------------
 
     with st.form("single_patient"):
 
@@ -676,7 +690,7 @@ with st.sidebar:
         )
 
 
-        # Values expected by model
+        # Convert translated display back to model value
         if sex_display == t["male"]:
             sex = "M"
         else:
@@ -717,7 +731,7 @@ with st.sidebar:
         )
 
 
-        # Values expected by model
+        # Convert translated display back to model value
         if smoker_display == t["yes"]:
             smoker = "Yes"
         else:
@@ -761,6 +775,7 @@ if submitted:
             model,
         )
 
+
         st.session_state["single"] = (
             prediction
             .iloc[0]
@@ -788,11 +803,11 @@ if "single" in st.session_state:
     row = st.session_state["single"]
 
 
-    # =====================================================
-    # SCORE GAUGE
-    # =====================================================
+    # -----------------------------------------------------
+    # GAUGE
+    # -----------------------------------------------------
 
-    fig = go.Figure(
+    gauge = go.Figure(
 
         go.Indicator(
 
@@ -818,7 +833,7 @@ if "single" in st.session_state:
                 },
 
                 "bar": {
-                    "color": "#8B0000",
+                    "color": "#991B1B",
                 },
 
                 "steps": [
@@ -837,14 +852,13 @@ if "single" in st.session_state:
                         "range": [60, 100],
                         "color": "#F3D6D8",
                     },
-
                 ],
             },
         )
     )
 
 
-    fig.update_layout(
+    gauge.update_layout(
 
         height=300,
 
@@ -861,9 +875,9 @@ if "single" in st.session_state:
     )
 
 
-    # =====================================================
-    # DASHBOARD COLUMNS
-    # =====================================================
+    # -----------------------------------------------------
+    # DASHBOARD LAYOUT
+    # -----------------------------------------------------
 
     gauge_col, info_col = st.columns(
         [1.5, 1],
@@ -874,14 +888,18 @@ if "single" in st.session_state:
     with gauge_col:
 
         st.plotly_chart(
-            fig,
+            gauge,
             width="stretch",
         )
 
 
     with info_col:
 
-        band_translation = {
+        # -----------------------------------------------
+        # TRANSLATE RISK LEVEL
+        # -----------------------------------------------
+
+        risk_translation = {
 
             "Low":
                 t["low"],
@@ -894,7 +912,7 @@ if "single" in st.session_state:
         }
 
 
-        displayed_band = band_translation.get(
+        displayed_risk = risk_translation.get(
             row["demo_band"],
             row["demo_band"],
         )
@@ -902,7 +920,7 @@ if "single" in st.session_state:
 
         st.metric(
             t["band"],
-            displayed_band,
+            displayed_risk,
         )
 
 
@@ -912,9 +930,9 @@ if "single" in st.session_state:
         )
 
 
-        # =================================================
-        # PATIENT DESCRIPTION
-        # =================================================
+        # -----------------------------------------------
+        # PATIENT DETAILS
+        # -----------------------------------------------
 
         if AR:
 
@@ -931,24 +949,26 @@ if "single" in st.session_state:
 
 
             st.caption(
-                f'العمر: {row["age"]} سنة · '
-                f'الجنس: {patient_sex} · '
-                f'ضغط الدم: {row["blood_pressure"]} · '
-                f'الكوليسترول: {row["cholesterol"]} · '
-                f'BMI: {row["bmi"]} · '
-                f'مدخن: {patient_smoker}'
+                f'**{t["patient_details"]}:**  '
+                f'العمر {row["age"]} سنة · '
+                f'الجنس {patient_sex} · '
+                f'ضغط الدم {row["blood_pressure"]} · '
+                f'الكوليسترول {row["cholesterol"]} · '
+                f'BMI {row["bmi"]} · '
+                f'مدخن {patient_smoker}'
             )
 
 
         else:
 
             st.caption(
-                f'Age: {row["age"]} · '
-                f'Sex: {row["sex"]} · '
-                f'BP: {row["blood_pressure"]} · '
-                f'Cholesterol: {row["cholesterol"]} · '
-                f'BMI: {row["bmi"]} · '
-                f'Smoker: {row["smoker"]}'
+                f'**{t["patient_details"]}:**  '
+                f'Age {row["age"]} · '
+                f'Sex {row["sex"]} · '
+                f'BP {row["blood_pressure"]} · '
+                f'Cholesterol {row["cholesterol"]} · '
+                f'BMI {row["bmi"]} · '
+                f'Smoker {row["smoker"]}'
             )
 
 
@@ -965,7 +985,7 @@ else:
 
 
 # =========================================================
-# BULK PATIENT ANALYSIS
+# BULK ANALYSIS
 # =========================================================
 
 st.divider()
@@ -990,7 +1010,7 @@ uploaded = st.file_uploader(
 
 
 # =========================================================
-# CSV ACTIONS
+# SAMPLE CSV ACTIONS
 # =========================================================
 
 download_col, sample_col = st.columns(2)
@@ -1016,7 +1036,7 @@ with sample_col:
 
 
 # =========================================================
-# CSV HELP
+# CSV FORMAT HELP
 # =========================================================
 
 with st.expander(
@@ -1060,7 +1080,7 @@ if source is not None:
     try:
 
         # -------------------------------------------------
-        # FILE SIZE CHECK
+        # FILE SIZE VALIDATION
         # -------------------------------------------------
 
         if uploaded is not None:
@@ -1089,7 +1109,7 @@ if source is not None:
 
 
         # -------------------------------------------------
-        # PREDICTION
+        # RUN MODEL
         # -------------------------------------------------
 
         result = predict(
@@ -1099,10 +1119,11 @@ if source is not None:
 
 
         # -------------------------------------------------
-        # METRICS
+        # SUMMARY COUNTS
         # -------------------------------------------------
 
         total_patients = len(result)
+
 
         low_count = int(
             result.demo_band
@@ -1110,11 +1131,13 @@ if source is not None:
             .sum()
         )
 
+
         medium_count = int(
             result.demo_band
             .eq("Medium")
             .sum()
         )
+
 
         high_count = int(
             result.demo_band
@@ -1122,6 +1145,11 @@ if source is not None:
             .sum()
         )
 
+
+        # -------------------------------------------------
+        # METRIC CARDS
+        # 2 x 2 also works well on mobile
+        # -------------------------------------------------
 
         metric1, metric2 = st.columns(2)
 
@@ -1133,18 +1161,21 @@ if source is not None:
             total_patients,
         )
 
+
         metric2.metric(
-            t["low_band"],
+            t["low_risk"],
             low_count,
         )
 
+
         metric3.metric(
-            t["medium_band"],
+            t["medium_risk"],
             medium_count,
         )
 
+
         metric4.metric(
-            t["high_band"],
+            t["high_risk"],
             high_count,
         )
 
@@ -1157,7 +1188,7 @@ if source is not None:
 
 
         # -------------------------------------------------
-        # DATA TABLE
+        # RESULTS TABLE
         # -------------------------------------------------
 
         st.dataframe(
@@ -1186,7 +1217,7 @@ if source is not None:
 
 
         # -------------------------------------------------
-        # DISTRIBUTION CHART
+        # RISK DISTRIBUTION
         # -------------------------------------------------
 
         counts = (
@@ -1203,12 +1234,9 @@ if source is not None:
         )
 
 
-        graph_labels = [
-
+        chart_labels = [
             t["low"],
-
             t["medium"],
-
             t["high"],
         ]
 
@@ -1217,7 +1245,7 @@ if source is not None:
 
             go.Bar(
 
-                x=graph_labels,
+                x=chart_labels,
 
                 y=counts.values,
 
@@ -1271,6 +1299,8 @@ if source is not None:
         exported = result.copy()
 
 
+        # Protect exported spreadsheets from formulas
+        # supplied inside text fields.
         for col in exported.select_dtypes(
             include=[
                 "object",
@@ -1311,13 +1341,17 @@ if source is not None:
         )
 
 
+        # -------------------------------------------------
+        # DOWNLOAD RESULTS
+        # -------------------------------------------------
+
         st.download_button(
 
             t["download_results"],
 
             csv_output,
 
-            "heartcare_demo_results.csv",
+            "heartcare_results.csv",
 
             "text/csv",
 
