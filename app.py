@@ -47,7 +47,7 @@ translations = {
 
     "English": {
 
-        "title": "HeartCare AI",
+        "title": "HeartCare",
 
         "subtitle":
             "PATIENT OVERVIEW / SINGLE & BULK ANALYSIS",
